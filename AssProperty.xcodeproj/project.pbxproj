@@ -60,11 +60,19 @@
 		6C0295341BDE21BD001F7C53 /* AssProperty */ = {
 			isa = PBXGroup;
 			children = (
+				6C82E2011BDF6FF900EDE6D7 /* libs */,
 				6C0295351BDE21BD001F7C53 /* main.m */,
+			);
+			path = AssProperty;
+			sourceTree = "<group>";
+		};
+		6C82E2011BDF6FF900EDE6D7 /* libs */ = {
+			isa = PBXGroup;
+			children = (
 				6C02953C1BDE2230001F7C53 /* NSString+Ass.h */,
 				6C02953D1BDE2230001F7C53 /* NSString+Ass.m */,
 			);
-			path = AssProperty;
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +251,7 @@
 				6C02953B1BDE21BD001F7C53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
