@@ -11,28 +11,27 @@
 
 @implementation NSString (Ass)
 
-static int _intFlag;
-
-static NSString *_strFlag;
 
 - (void)setStrFlag:(NSString *)flag {
     // void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy)
-    objc_setAssociatedObject(self, &_strFlag, flag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    SEL key = @selector(strFlag);
+    objc_setAssociatedObject(self, key, flag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString *)strFlag {
     // id objc_getAssociatedObject(id object, const void *key)
-    return objc_getAssociatedObject(self, &_strFlag);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 - (void)setIntFlag:(int)intFlag {
-    NSNumber *t = @(intFlag);
     // void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy)
-    objc_setAssociatedObject(self, &_intFlag, t, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    SEL key = @selector(intFlag);
+    objc_setAssociatedObject(self, key, @(intFlag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
 - (int)intFlag {
     // id objc_getAssociatedObject(id object, const void *key)
-    NSNumber *t = objc_getAssociatedObject(self, &_intFlag);
+    NSNumber *t = objc_getAssociatedObject(self,_cmd);
     return (int)[t integerValue];
 }
 

@@ -19,12 +19,16 @@
 
 @interface NSString (Ass)
 
-// 对象属性的set和get
-- (void)setStrFlag:(NSString *)strFlag;
-- (NSString *)strFlag;
+@property (nonatomic, strong) NSString *strFlag;
 
-// 非对象属性的set和get
-- (void)setIntFlag:(int)intFlag;
-- (int)intFlag;
+//// 对象属性的set和get
+//- (void)setStrFlag:(NSString *)strFlag;
+//- (NSString *)strFlag;
+
+@property (nonatomic, assign) int intFlag;
+
+//// 非对象属性的set和get
+//- (void)setIntFlag:(int)intFlag;
+//- (int)intFlag;
 
 @end
